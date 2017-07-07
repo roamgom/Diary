@@ -21,13 +21,12 @@ class Diary:
     def save_diary(self):
         with open(self.file_name, 'a') as diary_write:
             diary_write.write("Date : " + str(self.diary_date))
-            diary_write.write("By " + self.diary_author)
+            diary_write.write("\nBy " + self.diary_author)
             diary_write.write("\n" + self.diary_content)
+            diary_write.write("\n-----------------------------------------------------------------")
 
     def read_diary(self):
         with open(self.file_name, 'r') as diary_read:
             read_lines = diary_read.readlines()
             for line in read_lines:
                 print(line)
-
-
